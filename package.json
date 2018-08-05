@@ -1,0 +1,87 @@
+{
+  "name": "bunyan-firehose",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "Bunyan stream for sending logs to AWS Kinesis Firehose",
+  "author": "Daniel Cottone <daniel.cottone@asurion.com> (https://github.com/daniel-cottone)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniel-cottone/bunyan-firehose.git"
+  },
+  "bugs": {
+    "url": "https://github.com/daniel-cottone/bunyan-firehose/issues"
+  },
+  "homepage": "https://github.com/daniel-cottone/bunyan-firehose",
+  "engines": {
+    "node": ">=6.10.0"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "compile": "tsc",
+    "compile:clean": "rimraf dist",
+    "compile:watch": "tsc -w",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "lint": "tslint --project . --format stylish",
+    "prepublish": "yarn compile:clean && yarn compile",
+    "release": "semantic-release",
+    "test": "nyc mocha"
+  },
+  "keywords": [
+    "aws",
+    "amazon web services",
+    "kinesis",
+    "firehose",
+    "api gateway",
+    "bunyan",
+    "plugin",
+    "cloudwatch",
+    "log",
+    "logs",
+    "logging",
+    "stream"
+  ],
+  "release": {
+    "debug": true,
+    "noCi": true,
+    "verifyConditions": [
+      "@semantic-release/changelog",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ],
+    "prepare": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ],
+    "publish": [
+      "@semantic-release/npm",
+      "@semantic-release/github"
+    ]
+  },
+  "dependencies": {
+    "aws-sdk": "2.286.2",
+    "lodash": "4.17.10"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "3.0.0",
+    "@semantic-release/git": "7.0.1",
+    "@semantic-release/github": "5.0.2",
+    "@types/chai": "4.1.4",
+    "@types/faker": "4.1.2",
+    "@types/lodash": "4.14.116",
+    "@types/mocha": "5.2.5",
+    "@types/node": "10.5.6",
+    "@types/sinon": "5.0.1",
+    "chai": "4.1.2",
+    "coveralls": "3.0.2",
+    "faker": "4.1.0",
+    "mocha": "5.2.0",
+    "nyc": "12.0.2",
+    "rimraf": "2.6.2",
+    "semantic-release": "15.9.5",
+    "sinon": "6.1.4",
+    "ts-node": "7.0.0",
+    "tslint": "5.11.0",
+    "typescript": "3.0.1"
+  }
+}
