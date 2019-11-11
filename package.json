@@ -81,7 +81,7 @@
     "semantic-release": "15.9.5",
     "sinon": "6.1.4",
     "ts-node": "7.0.0",
-    "tslint": "5.11.0",
+    "tslint": "5.20.1",
     "typescript": "3.0.1"
   }
 }
