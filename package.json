@@ -60,7 +60,7 @@
   },
   "dependencies": {
     "aws-sdk": "2.286.2",
-    "lodash": "4.17.10"
+    "lodash": "4.17.20"
   },
   "devDependencies": {
     "@semantic-release/changelog": "3.0.0",
